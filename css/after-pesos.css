@@ -1,0 +1,55 @@
+/* .map-banten {
+    margin: 0;
+    padding: 0;
+    border: 1px white solid;
+}
+
+.map-banten .map-pointer {
+    max-height: 100%;
+    transform: scale(0.01);
+}
+
+.map-banten .plane {
+    max-height: 100%;
+    transform: scale(0.1);
+} */
+* {
+    /* overflow: hidden; */
+}
+
+.body{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    
+}
+
+.content-banten {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.content-banten .nilai-norma {
+    margin: 1rem 0;
+    /* width: 900px;
+    height: auto; */
+
+}
+
+.nilai-norma iframe {
+    width:70vw;
+    height: 80vh;
+}
+
+
+.content-banten .next-btn-banten button {
+    position: relative;
+    border: 1px var(--c1) solid;
+    padding: 10px 12px;
+    border-radius: 10px;
+
+}

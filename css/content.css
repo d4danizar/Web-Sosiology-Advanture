@@ -1,0 +1,45 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 20px;
+}
+
+#intro-text {
+    opacity: 1;        /* Visibilitas penuh */
+    transform: scale(1.2); /* Sedikit lebih besar dari ukuran normal */
+    transition: opacity 2s ease, transform 1s ease; /* Transisi opacity dan scale */
+}
+
+#intro-text.hide {
+    opacity: 0;       /* Menghilangkan */
+    transform: scale(0.8); /* Kecil saat menghilang */
+}
+
+#main-content {
+    opacity: 0;       /* Konten utama dimulai dengan tidak terlihat */
+    transition: opacity 2s ease;
+}
+
+#main-content.show {
+    opacity: 1;       /* Konten utama terlihat */
+}
+
+.hidden {
+    display: none;    /* Menghilangkan elemen dari tampilan */
+}
+
+.fade-in {
+    animation: fadeIn 1s ease forwards; /* Menambahkan animasi fade-in */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Mulai tidak terlihat */
+        transform: scale(1.5); /* Mulai lebih besar */
+    }
+    to {
+        opacity: 1; /* Menjadi terlihat */
+        transform: scale(1); /* Kembali ke ukuran normal */
+    }
+}

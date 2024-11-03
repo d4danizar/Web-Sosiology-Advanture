@@ -1,0 +1,41 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "montserrat", sans-serif;
+    color: var(--c1);
+    background-image: url('img/PNG/Asset\ 12.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position-y: -5rem;
+
+    text-align: center;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+    margin-top: 3rem;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#quiz-container {
+    margin-left: 2rem;
+    text-align: justify;
+}
+
+.question {
+    margin: 20px 0;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 15px;
+    font-size: 16px;
+
+}

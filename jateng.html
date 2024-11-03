@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        :root {
+            --c1    : #F6FCDF;
+            --c2    : #859F3D;
+            --c3    : #31511E;
+            --c4    : #1A1A19;
+            --s1    : #DFF2EB;
+            --s2    : #B9E5E8;
+            --s3    : #7AB2D3;  
+            --s4    : #4A628A; 
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            color: var(--c4);
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 3rem;
+            width: 80vw;
+            height: auto;
+            background-color: var(--c1);
+            border-radius: 1.4rem;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        .title {
+            text-align: center;
+        }
+        .sub-container {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .hangman {
+            margin: 0;
+            width: 300px;
+            height: 300px;
+        }
+        .hangman img {
+            width: 100%;
+        }
+        .words {
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 18px;
+            width: 100px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .status {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .score {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Hangman Game</h1>
+            <p>Tebak kata yang benar sebelum orang itu tergantung!</p>
+        </div>
+        <div class="sub-container">
+            <div class="hangman">
+                <img src="css/img/hangman/hangman0.png" id="hangman-image" alt="Hangman Image">
+            </div>
+            <div class="words-container">
+                <div class="words" id="words-display"></div>
+                <input type="text" id="letter-input" maxlength="1" placeholder="Masukkan Huruf">
+                <button id="guess-button">Tebak</button>
+                <div class="score" id="score-display" style="display:none;"></div>
+                <button id="next-button" style="display:none;" onclick="goToNextPage()">Lanjut Ke Halaman Selanjutnya</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/hangman.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select your first character</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/char-flip.css">
+</head>
+<body>
+    <section class="weber-gift">
+        
+        <div id="gift" class="gift">
+            <h1>Selamat, kamu mendapatkan hadiah...!</h1>
+            <img src="css/img/gift_box_icon_177141.png" alt="Hadiah">
+            <button id="lanjutkan">Terima</button>
+            
+        </div>
+
+        <div id="weber-img" class="weber-img">
+            <div class="char-flip">
+                <div class="front">
+                    <img src="css/img/weber-full.png" alt="Max Weber">
+                    <p>Max Weber</p>
+                </div>
+                <div class="back">
+                    <img src="css/img/marx-full.png" alt="Max Weber">
+                    <p>Max Weber's Biography</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="char-save-next">
+        <div class="char-save-next-btn">
+            <button id="terima"><a href="Peta Sosiologi-Banten.html">Simpan dan Lanjut</a></button>
+        </div>
+    </section>
+    <script>
+        window.onload = function () {
+            const gift = document.getElementById('gift');
+            const weberImage = document.getElementById('weber-image');
+            const lanjutkan = document.getElementById('lanjutkan');
+            
+            lanjutkan.addEventListener('click', function () {
+                gift.style.display = 'none';
+            });
+
+        }
+
+    //     window.onload = function () {
+    //         const shakeGift = document.getElementById('gift');
+    //         const terimaGift = document.getElementByid('terima');
+
+    //     }
+
+    //     shakeGift.addEventListener('click', function () {
+    //         shakeGift.style.transform = translateX(${shake})
+    //     }
+    
+    // )
+    </script>
+</body>
+</html>

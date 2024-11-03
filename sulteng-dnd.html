@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop Game</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        :root {
+            --c1    : #F6FCDF;
+            --c2    : #859F3D;
+            --c3    : #31511E;
+            --c4    : #1A1A19;
+            --s1    : #DFF2EB;
+            --s2    : #B9E5E8;
+            --s3    : #7AB2D3;  
+            --s4    : #4A628A; 
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            margin-top: 2rem;
+            width: 70%;
+            height: auto; /* Changed to auto for dynamic height */
+            background-color: var(--c1);
+            color: var(--c4);
+            border: transparent;           
+            border-radius: 1rem;
+            box-shadow: rgba(0, 0, 0, 0.8);
+            padding-bottom: 1rem; /* Added padding */
+        }
+
+        .title h1, .title p {
+            margin-top: 0.5rem;
+            text-align: center;
+        }
+
+        .draggable {
+            left: 15rem;
+            display: flex;
+            justify-content: center;
+            font-size: 1.2rem;
+            
+            position: absolute; /* Positioning for the correct drop */
+        }
+
+        .jawaban {
+            text-align: center;
+            margin: 0 0.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 8rem;
+            height: 4rem;
+            padding: 1rem;
+            background-color: var(--s3);
+            border-radius: 1rem;
+            cursor: move;  /* Pointer cursor for draggable items */
+            transition: all 0.3s ease; /* Smooth transition */
+        }
+
+        .drop-container {
+            margin-top: 10rem;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .drop-box {
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 8rem;
+            height: 4rem;
+            border: 2px solid var(--c3);
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden; /* Prevent overflow of draggable content */
+        }
+
+        .drop-container .drop p {
+            /* margin-left: 2rem; */
+            text-align: center;
+        }
+
+        .drop-box.empty {
+            height: 4rem; /* Maintain height when empty */
+            color: #A7A9AC;
+        }
+
+        .drop-box.correct {
+            border-color: green; /* Border color for correct answers */
+        }
+
+        .drop-box.wrong {
+            border-color: red; /* Border color for wrong answers */
+        }
+
+        .drop p {
+            text-align: justify;
+        }
+
+        .checkBtn {
+            height: 2rem;
+            margin: 1.4rem 0 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .score {
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        /* Button to proceed to the next page */
+        .nextBtn {
+            display: none; /* Initially hidden */
+            margin-left: 34%;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+            background-color: var(--s3);
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+
+       /* Special styles for drop zones during drag'n'drop */
+       .drop-box.over {
+            border-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Drag n Drop Games</h1>
+            <p>Drag atau seret jawaban kamu ke kotak yang benar!</p>
+        </div>
+        <div id="draggable" class="draggable">
+            <div class="jawaban" data-answer="A" id="itemA" draggable="true">Lembaga Politik</div>
+            <div class="jawaban" data-answer="B" id="itemB" draggable="true">Lembaga Hukum</div>
+            <div class="jawaban" data-answer="C" id="itemC" draggable="true">Lembaga Pendidikan</div>
+            <div class="jawaban" data-answer="D" id="itemD" draggable="true">Lembaga Ekonomi</div>
+            <div class="jawaban" data-answer="E" id="itemE" draggable="true">Sosial Bidang Agama</div>
+        </div>
+        <div class="drop-container">
+            <div class="drop">
+                <div class="drop-box empty" data-correct="D">Drop Here</div>
+                <p>Pabrik Roti</p>
+            </div>
+            <div class="drop">
+                <div class="drop-box empty" data-correct="E">Drop Here</div>
+                <p>Rumah Ibadah</p>
+            </div>
+            <div class="drop">
+                <div class="drop-box empty" data-correct="B">Drop Here</div>
+                <p>BNN</p>
+            </div>
+            <div class="drop">
+                <div class="drop-box empty" data-correct="C">Drop Here</div>
+                <p>Universitas</p>
+            </div>
+            <div class="drop">
+                <div class="drop-box empty" data-correct="A">Drop Here</div>
+                <p>MPR</p>
+            </div>
+        </div>
+        <div class="score" id="scoreDisplay">Skor: 0</div>
+        <div id="checkBtn" class="checkBtn">
+            <button onclick="checkAnswers()">Periksa Jawaban</button>
+        </div>
+        <button id="nextBtn" class="nextBtn" onclick="goToNextPage()">Lanjut Ke Halaman Selanjutnya</button>
+    </div>
+
+    <script src="js/dragDrop.js"></script>
+</body>
+</html>

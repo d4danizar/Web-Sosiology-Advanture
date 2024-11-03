@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ending</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        :root {
+    --c1    : #F6FCDF;
+    --c2    : #859F3D;
+    --c3    : #31511E;
+    --c4    : #1A1A19;
+    --s1    : #DFF2EB;
+    --s2    : #B9E5E8;
+    --s3    : #7AB2D3;  
+    --s4    : #4A628A; 
+
+}
+
+    body {
+        color: var(--c4);
+        height: 100vh;
+
+    }
+    .container {
+        position: relative;
+        top: 2rem;
+        left: 10%;
+        width: 80vw;
+        height: 80vh;
+        background-color: var(--c1);
+        border-radius: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        z-index: 99;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .flexbox-row {
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+
+    .score {
+        text-align: center;
+        color: var(--c1);
+        margin-bottom: 2rem;
+        width: 45%;
+        height: 19rem;
+        background-color: var(--c2);
+        border-radius: 1rem;
+        box-shadow: rgba(0, 0, 0, 1);
+    }
+
+    .achievements {
+        text-align: center;
+        color: var(--c1);
+        margin-bottom: 2rem;
+        width: 45%;
+        height: 19rem;
+        background-color: var(--c2);
+        border-radius: 1rem;
+        box-shadow: rgba(0, 0, 0, 1);
+    }
+
+    .back-button button {
+
+        padding: 1rem;
+        background-color: var(--s3);
+        border: transparent;
+        border-radius: 0.5rem;
+
+        transition: 0.6s;
+
+    }
+
+    .back-button a {
+        color: var(--c1);
+        text-decoration: none;
+    }
+
+    .back-button button:hover {
+        background-color: var(--c3);
+        color: var(--s1);
+        border: 1px solid var(--s1);
+    }
+    
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Selamat, kamu telah menyelesaikan game Sociology Adventure</h1>
+            <p>Silahkan lihat pencapaian kamu!</p>
+        </div>
+        <div class="flexbox-row">
+            <div class="score">
+                <h3>Kamu mendapatkan Skor:</h3>
+                <div id="score-value" class="score-value"></div>
+            </div>
+            <div class="achievements">
+                <h3>Pencapaianmu</h3>
+                <div class="tokoh"></div>
+            </div>
+        </div>
+        <div class="back-button">
+            <button><a href="main-page.html">Selesai</a></button>
+        </div>
+    </div>
+    <script type="module" src="js/hangman.js"></script>
+    <script type="module" src="js/script.js"></script>
+    <script type="module" src="js/dragDrop.js"></script>
+    <script type="module" src="js/data.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap Sociology Adventure</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            border: 2px solid white;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        h1 {
+            margin: 0;
+        }
+        h2 {
+            margin: 20px 0 10px;
+        }
+        p {
+            margin: 10px 0 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 200px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Roadmap Sociology Adventure</h1>
+        <h2>In-progress!</h2>
+        <p>Peraturan Bermain!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla aliquet purus non massa venenatis tincidunt.</p>
+        <label for="username">Masukkan username kamu:</label>
+        <br>
+        <input type="text" id="username" placeholder="username" />
+        <br>
+        <button id="saveBtn">Simpan dan lanjut!</button>
+        <h2 id="greeting"></h2>
+    </div>
+
+    <script>
+        // Memeriksa dan menampilkan username yang disimpan
+        window.onload = function () {
+            const savedUsername = localStorage.getItem('username');
+            if (savedUsername) {
+                document.getElementById('greeting').innerText = `Halo, ${savedUsername}!`;
+            }
+        };
+
+        // Menyimpan username ke local storage
+        document.getElementById('saveBtn').onclick = function () {
+            const username = document.getElementById('username').value;
+            if (username) {
+                localStorage.setItem('username', username);
+                document.getElementById('greeting').innerText = `Halo, ${username}!`;
+                document.getElementById('username').value = ''; // Mengosongkan input setelah menyimpan
+            } else {
+                alert('Silakan masukkan username!');
+            }
+        };
+    </script>
+</body>
+</html>
